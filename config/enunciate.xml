@@ -1,0 +1,15 @@
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.13.0.xsd">
+
+    <title>Test API</title>
+    <description format="markdown" file="../doc/intro.md"/>
+    <application root="https://api.example.com"/>
+
+    <api-classes>
+        <include pattern="com.example.**"/>
+        <exclude pattern="org.jboss.**"/>
+    </api-classes>
+
+    <modules>
+    </modules>
+</enunciate>

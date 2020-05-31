@@ -1,0 +1,14 @@
+build/
+bin/
+gen/
+out/
+.settings/
+.gradle/
+.DS_Store
+.classpath
+.project
+dist/
+
+*.iml
+.idea/*
+!.idea/codeStyles

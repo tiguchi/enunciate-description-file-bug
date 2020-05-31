@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id "com.webcohesion.enunciate" version "2.13.0"
+}
+
+repositories {
+    jcenter()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.enunciate {
+    File enunciateDistDir = file("dist/api-doc")
+
+    doFirst {
+        enunciateDistDir.deleteDir()
+        enunciateDistDir.mkdirs()
+    }
+
+    configFileName = file("config/enunciate.xml")
+    export("docs", enunciateDistDir)
+}
+
+dependencies {
+    compile "org.apache.cxf:cxf-rt-frontend-jaxrs:3.3.6"
+}
